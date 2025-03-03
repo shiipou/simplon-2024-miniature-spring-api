@@ -1,0 +1,26 @@
+meta {
+  name: createPost
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{host}}/api/posts
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "content": "Check my new GitHub page !",
+    "group": null,
+    "attachments": [{
+      "type": "link",
+      "link": "https://github.com/shiipou",
+      "image": null,
+      "video": null,
+      "document": null,
+      "post": null
+    }]
+  }
+}

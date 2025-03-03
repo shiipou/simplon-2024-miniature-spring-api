@@ -13,9 +13,9 @@ spring:
       quiet-period: 1s
 
   datasource:
-    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/miniature}
-    username: ${DATASOURCE_USERNAME:miniature}
-    password: ${DATASOURCE_PASSWORD:miniature}
+    url: jdbc:postgresql://localhost:5432/miniature
+    username:  miniature
+    password:  miniature
   jpa:
     database: postgresql
     hibernate:

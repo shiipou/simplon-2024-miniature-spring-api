@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "simplon-2024-miniature-spring-api",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

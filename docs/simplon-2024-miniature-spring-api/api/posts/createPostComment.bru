@@ -1,0 +1,30 @@
+meta {
+  name: createPostComment
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{host}}/api/posts/:id/comments
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 1
+}
+
+body:json {
+  {
+    "content": "Test",
+    "group": null,
+    "attachments": [{
+      "type": "link",
+      "link": "https://github.com/shiipou",
+      "image": null,
+      "video": null,
+      "document": null,
+      "post": null
+    }]
+  }
+}

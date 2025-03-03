@@ -1,0 +1,16 @@
+meta {
+  name: getNewestPosts
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}/api/posts/newest?page=1&size=4
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 1
+  size: 4
+}
