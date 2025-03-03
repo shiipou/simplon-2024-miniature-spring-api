@@ -1,0 +1,301 @@
+{
+  "name": "simplon-2024-miniature-spring-api",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "api",
+      "items": [
+        {
+          "type": "folder",
+          "name": "auth",
+          "items": [
+            {
+              "type": "http",
+              "name": "login",
+              "seq": 1,
+              "request": {
+                "url": "{{host}}/api/auth/login",
+                "method": "POST",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"username\": \"admin\",\n  \"password\": \"admin\"\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "none"
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "register",
+              "seq": 2,
+              "request": {
+                "url": "{{host}}/api/auth/register",
+                "method": "POST",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"username\": \"admin\",\n  \"password\": \"admin\"\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "none"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "users",
+          "items": [
+            {
+              "type": "http",
+              "name": "getUserById",
+              "seq": 1,
+              "request": {
+                "url": "{{host}}/api/users/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "6",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "inherit"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "posts",
+          "items": [
+            {
+              "type": "http",
+              "name": "getPostById",
+              "seq": 1,
+              "request": {
+                "url": "{{host}}/api/posts/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "1",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "inherit"
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "getTrendingPosts",
+              "seq": 2,
+              "request": {
+                "url": "{{host}}/api/posts/trending",
+                "method": "GET",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "inherit"
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "getNewestPosts",
+              "seq": 3,
+              "request": {
+                "url": "{{host}}/api/posts/newest?page=1&size=4",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "page",
+                    "value": "1",
+                    "type": "query",
+                    "enabled": true
+                  },
+                  {
+                    "name": "size",
+                    "value": "4",
+                    "type": "query",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "inherit"
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "createPostComment",
+              "seq": 4,
+              "request": {
+                "url": "{{host}}/api/posts/:id/comments",
+                "method": "POST",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "1",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"content\": \"Test\",\n  \"group\": null,\n  \"attachments\": [{\n    \"type\": \"link\",\n    \"link\": \"https://github.com/shiipou\",\n    \"image\": null,\n    \"video\": null,\n    \"document\": null,\n    \"post\": null\n  }]\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "inherit"
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "createPost",
+              "seq": 5,
+              "request": {
+                "url": "{{host}}/api/posts",
+                "method": "POST",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"content\": \"Check my new GitHub page !\",\n  \"group\": null,\n  \"attachments\": [{\n    \"type\": \"link\",\n    \"link\": \"https://github.com/shiipou\",\n    \"image\": null,\n    \"video\": null,\n    \"document\": null,\n    \"post\": null\n  }]\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "inherit"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "environments": [],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0MDk1NzA2NiwiZXhwIjoxNzQxMDQzNDY2fQ.vGwIQ6EzijlNmWoPRQex7_fEoiDjT7ppMRRI9ttxopxeYmVdcYQuRJe-zcoV79JEwuy7I5RWYphaRmgLUNGyVA"
+        }
+      },
+      "vars": {
+        "req": [
+          {
+            "name": "host",
+            "value": "http://localhost:8080",
+            "enabled": true,
+            "local": false,
+            "uid": "tZPStYKmggc4nRKb3a62a"
+          }
+        ]
+      }
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "simplon-2024-miniature-spring-api",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0,
+    "filesCount": 0
+  }
+}
