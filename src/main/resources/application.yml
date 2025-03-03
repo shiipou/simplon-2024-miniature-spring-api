@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: miniature
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 100
+
+  devtools:
+    restart:
+      poll-interval: 2s
+      quiet-period: 1s
+
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/miniature}
+    username: ${DATASOURCE_USERNAME:miniature}
+    password: ${DATASOURCE_PASSWORD:miniature}
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+    locations: classpath:db/migrations
+    
+jwt:
+  secret: 7A25432A462D4A614E645267556B58703273357638792F423F4528482B4B6250
+  expiration: 86400000
