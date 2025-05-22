@@ -65,8 +65,8 @@ The application uses PostgreSQL with the following main entities:
 - Group management endpoints (TBD)
 
 ### Authentication
-- `GET /api/auth/login` - Retrieve user token using `username` and `password`
-- `GET /api/auth/register` - Register a new user with `username` and `password`
+- `POST /api/auth/login` - Retrieve user token using `username` and `password`
+- `POST /api/auth/register` - Register a new user with `username` and `password`
 
 ## Getting Started
 
